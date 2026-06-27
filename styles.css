@@ -1,0 +1,281 @@
+        :root {
+            --rose-color: #EBC7C6;
+            --dark-rose: #D68D8D;
+            --gold-color: #D4AF37;
+            --bg-cream: #FAF8F5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Contenedor principal simulando pantalla de móvil */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--bg-cream);
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- ESTILO DE LA NUEVA PORTADA CON FLORES --- */
+        #portada-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            /* Aquí usamos la imagen que guardaste */
+            background-image: url('portada-flores.png');
+            background-size: cover;
+            background-position: center;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 1s ease-in-out;
+            transform: scale(1);
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #portada-wrapper.open {
+            transform: scale(1.2) translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* El cuadro central donde irá el texto "ABRIR" */
+        .center-box {
+            background-color: rgba(255, 255, 255, 0.85);
+            /* Semi-transparente para tapar el texto original */
+            border: 1px solid #333;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Ajusta este margen si el cajetín de tu imagen no queda perfecto */
+            margin-top: -25px;
+        }
+
+        .center-box span {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #2A1A00;
+            font-weight: normal;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+            /* El mismo efecto de latido */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            70% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* --- ESTILO DE LA INVITACIÓN (Contenido oculto inicialmente) --- */
+        #invitation-content {
+            display: none;
+            /* Oculto por defecto */
+            background-color: var(--bg-cream);
+            padding-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Imagen Principal */
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: var(--pos, center);            
+        }
+
+        .names-section {
+            padding: 30px 20px;
+            background-color: var(--rose-color);
+            color: #fff;
+            position: relative;
+            z-index: 10;
+        }
+
+        .names-section h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .names-section p {
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .date-text {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            font-weight: 700;
+        }
+
+        /* Sección Historia */
+        .story-section {
+            padding: 20px 20px;
+        }
+
+        .invitation {
+            padding: 20px 20px;
+        }
+
+        .invitation h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #C5A059;
+            margin-bottom: 20px;
+        }
+        
+        .story-section h3 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            color: #C5A059;
+            margin-bottom: 10px;
+        }
+
+        .story-card {
+            border: 1px solid var(--gold-color);
+            padding: 30px 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .story-card p {
+            margin: 10px 0;
+        }
+
+        /* Sección Ceremonia y Recepción */
+        .event-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-box {
+            border: 1px solid #EBC7C6;
+            padding: 30px 15px;
+            margin-bottom: 40px;
+        }
+
+        .event-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .event-details {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .event-details span {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .btn-ver-mas {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #D68D8D;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-ver-mas:hover {
+            background-color: #C07A7A;
+        }
+
+        .footer {
+            padding: 40px 20px;
+            margin-top: 20px;
+            font-size: 0.7rem;
+            color: #999;
+            font-family: sans-serif;
+        }
+
+        .footer-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Control de Música */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background-color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d9d9d9;
+            cursor: pointer;
+            color: #555;
+            font-size: 18px;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .carousel-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: var(--pos, center);
+            opacity: 0;
+            transition: opacity .8s ease;
+        }
+        .carousel-image.active {
+            opacity: 1;
+        }

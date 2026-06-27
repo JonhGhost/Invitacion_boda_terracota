@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Boda Jonathan & Karen</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" >
+        <img src="images/one.jpeg" class="hero-image" alt="Pareja de novios" style="--pos: center 10%;">
+
+        <div id="portada-wrapper" onclick="openInvitation()">
+            <!-- Cuadro central con el texto ABRIR -->
+            <div class="center-box">
+                <span>Abrir</span>
+            </div>
+        </div>
+
+        <div id="invitation-content">
+            
+            <div class="names-section">
+                <h1>Jonathan & Karen</h1>
+                <div class="date-text">18 DE JULIO 2026</div>
+            </div>
+
+            <div class="invitation">
+                <h3>Nos complace invitarte a la celebración de nuestra boda civil.</h3>
+                <div class="story-card">
+                    <p>Nos haría muy felices que nos acompañes en este día tan importante.</p>
+                </div>
+            </div>
+
+            <div class="story-section">
+                <h3>Cuando nos conocimos...</h3>
+                <div class="story-card">
+                    <p>Nos conocimos por primera vez en un lugar donde jamás imaginamos que nuestros caminos se cruzarían. Aquel recinto se convirtió en el escenario que nos unió y cambió nuestras vidas para siempre. Desde el primer momento en que nuestras miradas se encontraron, sentimos una conexión especial, como si estuviéramos destinados a encontrarnos. Hasta el día de hoy, recordamos ese instante con una enorme alegría, porque fue el comienzo de una historia que seguimos construyendo juntos.</p>
+                </div>
+            </div>
+
+            <div class="event-section">
+                <div class="event-box">
+                    <div class="event-title">Ceremonia Religiosa</div>
+                    <div class="event-details">
+                        <span>Santa María Ajoloapan, Estado de México</span>
+                        <span>14:00 hrs</span>
+                        <span style="font-size: 0.8rem; color: #777;">Finca Los Chiquilines, Calle Del Salto, S/N</span>
+                    </div>
+                   <a href="https://www.google.com/maps/place/19%C2%B058%2710.8%22N+99%C2%B002%2738.0%22W/@19.9695907,-99.04408,3a,90y,118.65h,88.01t/data=!3m7!1e1!3m5!1saHlWnWLwVPpj5VmgooDwLw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D1.9869228164047286%26panoid%3DaHlWnWLwVPpj5VmgooDwLw%26yaw%3D118.64908987606364!7i16384!8i8192!4m4!3m3!8m2!3d19.9696665!4d-99.0438873?hl=es&entry=ttu&g_ep=EgoyMDI2MDYyMy4wIKXMDSoASAFQAw%3D%3D"  target="_blank" rel="noopener noreferrer" class="btn-ver-mas"> VER MÁS</a>
+                </div>
+            </div>
+
+            <div class="carousel">
+                <img src="images/one.jpeg" class="carousel-image active" alt="Foto 1"  style="--pos: center 10%;">
+                <img src="images/two.jpeg" class="carousel-image" alt="Foto 2" style="--pos: center 20%;">
+                <img src="images/three.jpeg" class="carousel-image" alt="Foto 3" style="--pos: center 30%;">
+                <img src="images/four.jpeg" class="carousel-image" alt="Foto 4" style="--pos: center 70%;">
+                <img src="images/five.jpeg" class="carousel-image" alt="Foto 5" style="--pos: center 50%;">
+                <img src="images/six.jpeg" class="carousel-image" alt="Foto 6" style="--pos: center 25%;">
+                <img src="images/seven.jpeg" class="carousel-image" alt="Foto 7" style="--pos: center 30%;">
+                <img src="images/eight.jpeg" class="carousel-image" alt="Foto 8" style="--pos: center 10%;">
+            </div>
+        </div>
+
+        <div class="music-control" id="musicBtn" onclick="toggleMusic()">
+            🎵
+        </div>
+
+        <audio id="bgMusic" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

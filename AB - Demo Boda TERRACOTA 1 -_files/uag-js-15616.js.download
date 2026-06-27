@@ -1,0 +1,88 @@
+document.addEventListener("DOMContentLoaded", function(){ 				window.addEventListener( 'DOMContentLoaded', () => {
+					const blockScope = document.querySelector( '.uagb-block-88a66143' );
+					if ( ! blockScope ) {
+						return;
+					}
+
+					const anchorElement = blockScope.querySelector('a');
+					if (!anchorElement) {
+						return;
+					} 
+
+					 
+					blockScope.addEventListener('keydown', (event) => {
+						if ( 13 === event.keyCode || 32 === event.keyCode ) {
+							event.preventDefault();
+							 
+							anchorElement.click();	
+						}
+					} );
+				} );
+			window.addEventListener( 'load', function() {
+	UAGBCountdown.init( '.uagb-block-3296034f', {"block_id":"3296034f","endDateTime":"2026-04-12T00:00:00.000Z","showDays":true,"showHours":true,"showMinutes":true,"isFrontend":true,"timerEndAction":"zero","redirectURL":""} );
+});
+				window.addEventListener( 'DOMContentLoaded', () => {
+					const blockScope = document.querySelector( '.uagb-block-3c319430' );
+					if ( ! blockScope ) {
+						return;
+					}
+
+					const anchorElement = blockScope.querySelector('a');
+					if (!anchorElement) {
+						return;
+					} 
+
+					 
+					blockScope.addEventListener('keydown', (event) => {
+						if ( 13 === event.keyCode || 32 === event.keyCode ) {
+							event.preventDefault();
+							 
+							anchorElement.click();	
+						}
+					} );
+				} );
+			window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-412f5f1a' );
+});
+				window.addEventListener( 'DOMContentLoaded', () => {
+					const blockScope = document.querySelector( '.uagb-block-f5b00321' );
+					if ( ! blockScope ) {
+						return;
+					}
+
+					const anchorElement = blockScope.querySelector('a');
+					if (!anchorElement) {
+						return;
+					} 
+
+					 
+					blockScope.addEventListener('keydown', (event) => {
+						if ( 13 === event.keyCode || 32 === event.keyCode ) {
+							event.preventDefault();
+							 
+							anchorElement.click();	
+						}
+					} );
+				} );
+			window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-fbf2f883' );
+});
+window.addEventListener("DOMContentLoaded", function(){
+	UAGBTimelineClasses( {"block_id":"ad4d7230","timelinAlignment":"center","timelinAlignmentTablet":"left","timelinAlignmentMobile":"center"}, '.uagb-block-ad4d7230' );
+});
+window.addEventListener("resize", function(){
+	UAGBTimelineClasses( {"block_id":"ad4d7230","timelinAlignment":"center","timelinAlignmentTablet":"left","timelinAlignmentMobile":"center"}, '.uagb-block-ad4d7230' );
+});
+window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-1c64eed8' );
+});
+window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-4a10b53a' );
+});
+window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-ccf5b564' );
+});
+window.addEventListener( 'load', function() {
+	UAGBButtonChild.init( '.uagb-block-80a953d5' );
+});
+ });
