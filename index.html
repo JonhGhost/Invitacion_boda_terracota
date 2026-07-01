@@ -5060,6 +5060,57 @@
 	<link rel="stylesheet" id="google-font-beau-rivage-css" href="./KARENYJONATHAN_files/css(1)" media="all">
 
 	<script src="./KARENYJONATHAN_files/wp-emoji-release.min.js.download" defer=""></script>
+	<!-- iOS Safari scroll fix: evita que el overlay inicial o reglas globales bloqueen el scroll -->
+	<style id="ios-safari-scroll-fix">
+		html,
+		body {
+			height: auto !important;
+			min-height: 100% !important;
+			max-width: 100%;
+			overflow-y: auto !important;
+			overflow-x: hidden !important;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		body {
+			min-height: 100vh !important;
+			min-height: 100dvh !important;
+			touch-action: pan-y;
+		}
+
+		/* La regla original usa touch-action: manipulation en todo el sitio; en iOS puede afectar gestos de scroll. */
+		*,
+		*::before,
+		*::after {
+			touch-action: auto;
+		}
+
+		/* El overlay de bienvenida debe ocupar el viewport real de iPhone y dejar de capturar eventos al cerrarse. */
+		#pantallaBienvenida {
+			inset: 0;
+			height: 100vh;
+			height: 100dvh;
+			overscroll-behavior: contain;
+		}
+
+		#pantallaBienvenida.oculta {
+			visibility: hidden !important;
+			opacity: 0 !important;
+			pointer-events: none !important;
+			display: none !important;
+		}
+
+		/* En iOS el parallax con background-attachment: fixed suele congelar o cortar el scroll. */
+		@supports (-webkit-touch-callout: none) {
+			.has-parallax,
+			.wp-block-cover.has-parallax,
+			.wp-block-cover__image-background.has-parallax,
+			.wp-block-cover-image.has-parallax {
+				background-attachment: scroll !important;
+			}
+		}
+	</style>
+
 </head>
 
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope"
@@ -5129,25 +5180,44 @@
 											<source src="images/sabes.mp3" type="audio/mpeg">
 										</audio>
 
-										<script>
-											document.getElementById('sobreContainer').addEventListener('click', function () {
-												var sobre = document.getElementById('sobre');
-												var audio = document.getElementById('musicaFondo');
+																						<script>
+													(function () {
+														var sobreContainer = document.getElementById('sobreContainer');
+														var pantallaBienvenida = document.getElementById('pantallaBienvenida');
 
-												// Abrir el sobre (añade clase para animación)
-												sobre.classList.add('abierto');
+														function habilitarScrollIOS() {
+															document.documentElement.style.overflowY = 'auto';
+															document.documentElement.style.height = 'auto';
+															document.body.style.overflowY = 'auto';
+															document.body.style.height = 'auto';
+															document.body.classList.remove('ast-main-header-nav-open');
+														}
 
-												// Reproducir música
-												audio.play().catch(function (error) {
-													console.log('Autoplay bloqueado, pero el sobre ya se abrió.');
-												});
+														if (!sobreContainer) return;
 
-												// Ocultar la pantalla de bienvenida tras la animación
-												setTimeout(function () {
-													document.getElementById('pantallaBienvenida').classList.add('oculta');
-												}, 1200); // 1.2 segundos (duración de la animación de la solapa)
-											});
-										</script>
+														sobreContainer.addEventListener('click', function () {
+															var sobre = document.getElementById('sobre');
+															var audio = document.getElementById('musicaFondo');
+
+															if (sobre) sobre.classList.add('abierto');
+
+															if (audio) {
+																audio.play().catch(function () {
+																	console.log('Autoplay bloqueado, pero el sobre ya se abrió.');
+																});
+															}
+
+															setTimeout(function () {
+																if (pantallaBienvenida) {
+																	pantallaBienvenida.classList.add('oculta');
+																	pantallaBienvenida.setAttribute('aria-hidden', 'true');
+																	pantallaBienvenida.remove();
+																}
+																habilitarScrollIOS();
+															}, 1200);
+														});
+													})();
+												</script>
 
 										<figure class="wp-block-image aligncenter size-full is-resized"><img
 												decoding="async"
@@ -5567,7 +5637,7 @@
 
 
 												<figure class="wp-block-image aligncenter size-full is-resized"><img
-														decoding="async" src="" alt="" class="wp-image-10622"
+														decoding="async" src="images/IMGEN  CASA  PATIO.jpeg" alt="" class="wp-image-10622"
 														style="width:282px;height:auto"></figure>
 
 
