@@ -3214,6 +3214,13 @@
 		/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
 	</style>
 	<style id="wp-block-cover-inline-css">
+		/* FIX PARA SCROLL EN SAFARI */
+		html,
+		body {
+			overflow-x: hidden;
+			-webkit-overflow-scrolling: touch;
+		}
+
 		.wp-block-cover,
 		.wp-block-cover-image {
 			align-items: center;
@@ -3225,14 +3232,13 @@
 			overflow: hidden;
 			overflow: clip;
 			padding: 1em;
-			position: relative
+			position: relative;
 		}
 
-		.wp-block-cover .has-background-dim:not([class*=-background-color]),
-		.wp-block-cover-image .has-background-dim:not([class*=-background-color]),
-		.wp-block-cover-image.has-background-dim:not([class*=-background-color]),
-		.wp-block-cover.has-background-dim:not([class*=-background-color]) {
-			background-color: #000
+		/* REGLA CORREGIDA QUE BLOQUEABA SAFARI */
+		.wp-block-cover .has-background-dim:not([class*="-background-color"]),
+		.wp-block-cover-image .has-background-dim:not([class*="-background-color"]) {
+			background-color: #000;
 		}
 
 		.wp-block-cover .has-background-dim.has-background-gradient,
@@ -5213,7 +5219,7 @@
 
 												<h1 class="fonts-plugin-block "
 													style="font-family: Beau Rivage;font-size: 24px;text-align: center;color: #000000">
-													Miguel Angel Castilla Lagos<br>&amp;<br>Elizabeth Castilla Ñonthe
+													Miguel Angel Castilla Lagos<br>&amp;<br>Elizabeth Ñonthe Martínez
 												</h1>
 
 
@@ -5585,8 +5591,8 @@
 							Código de vestimenta – </strong></h1>
 
 					<h1 class="fonts-plugin-block "
-						style="font-family: palatino;font-size: 20px;text-align: center;color: #000000">Formal Boda
-						Tematica Vaquera</h1>
+						style="font-family: palatino;font-size: 20px;text-align: center;color: #000000">Formal, boda
+						temática Vaquera</h1>
 
 
 					<figure class="wp-block-image aligncenter size-full is-resized"><img decoding="async"
@@ -5703,7 +5709,7 @@
 							</div>
 							<div class="uagb-timeline__day-new uagb-timeline__events-inner-new uagb-timeline__day-left">
 								<div class="uagb-timeline__events-inner--content"><span
-										class="uagb-timeline__heading"><strong></strong>Musica</span>
+										class="uagb-timeline__heading"><strong>Musica apartir de:</strong></span>
 									<p class="uagb-timeline-desc-content">3:00 PM.</p>
 									<div class="uagb-timeline__arrow"></div>
 								</div>
@@ -6120,6 +6126,14 @@
 		//# sourceURL=https://miinvitacion.net/wp-includes/js/wp-emoji-loader.min.js
 	</script>
 
+	<footer class="site-footer custom-credits-footer"
+		style="text-align: center; padding: 40px 20px; background-color: var(--ast-global-color-4, #f2f1e5); color: var(--ast-global-color-3, #534a45); font-family: 'Poppins', sans-serif; font-size: 14px; margin-top: 50px; border-top: 1px solid var(--ast-border-color, #dddddd);">
+		<div style="max-width: 1200px; margin: 0 auto;">
+			<p style="margin: 0 0 10px 0;">&copy; 2026 Derechos reservados para Jonathan Ñonthe, creador de la
+				invitación.</p>
+			<p style="margin: 0; font-size: 13px; opacity: 0.8;">Créditos de fotografía: Joel Hernandez.</p>
+		</div>
+	</footer>
 
 </body>
 
