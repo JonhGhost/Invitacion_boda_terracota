@@ -5,6 +5,24 @@
             --bg-cream: #FAF8F5;
         }
 
+        /* Asegúrate de que la clase corresponda al contenedor principal de la invitación */
+        .site-content,
+        main {
+            pointer-events: auto !important;
+            z-index: 10;
+            position: relative;
+        }
+
+        html,
+        body {
+            height: auto !important;
+            min-height: 100% !important;
+            /* Esto soluciona el salto de la barra de direcciones en iOS */
+            min-height: -webkit-fill-available;
+            overflow-y: auto !important;
+            position: relative;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -108,7 +126,7 @@
             width: 100%;
             height: 300px;
             object-fit: cover;
-            object-position: var(--pos, center);            
+            object-position: var(--pos, center);
         }
 
         .names-section {
@@ -154,7 +172,7 @@
             color: #C5A059;
             margin-bottom: 20px;
         }
-        
+
         .story-section h3 {
             font-family: 'Great Vibes', cursive;
             font-size: 2rem;
@@ -258,6 +276,7 @@
             color: #555;
             font-size: 18px;
         }
+
         .carousel {
             position: relative;
             width: 100%;
@@ -276,6 +295,7 @@
             opacity: 0;
             transition: opacity .8s ease;
         }
+
         .carousel-image.active {
             opacity: 1;
         }

@@ -80,6 +80,16 @@
 			--srfm-color-input-label: var(--ast-global-color-2);
 		}
 
+		html,
+		body {
+			height: auto !important;
+			min-height: 100% !important;
+			/* Esto soluciona el salto de la barra de direcciones en iOS */
+			min-height: -webkit-fill-available;
+			overflow-y: auto !important;
+			position: relative;
+		}
+
 		html {
 			font-size: 106.25%;
 		}
@@ -4331,6 +4341,10 @@
 			margin: 0;
 		}
 
+		* {
+			touch-action: manipulation;
+		}
+
 		.wp-site-blocks>.alignleft {
 			float: left;
 			margin-right: 2em;
@@ -5260,7 +5274,7 @@
 
 												<h1 class="fonts-plugin-block "
 													style="font-family: Beau Rivage;font-size: 24px;text-align: center;color: #000000">
-													Abraham Alejandro Torres Mendoza<br>&amp;<br>Maria Guadalupe Zuñiga
+													Abraham Alejandro Torres Mendoza<br>&amp;<br>Maria Guadalupe Zúñiga
 													Cruz</h1>
 											</div>
 										</div>
